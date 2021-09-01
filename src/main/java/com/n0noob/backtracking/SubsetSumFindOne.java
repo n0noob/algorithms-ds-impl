@@ -1,8 +1,10 @@
 package com.n0noob.backtracking;
 
+import lombok.extern.slf4j.Slf4j;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+@Slf4j
 public class SubsetSumFindOne {
 
     public Set<Integer> getSubsetsWithGivenSum(final int[] a, final int sum) {
@@ -24,13 +26,13 @@ public class SubsetSumFindOne {
         for(int i = index; i < a.length; i++) {
             if(isSafe(a, i, currSum, sum)) {
                 sol.add(a[i]);
-                System.out.println("After adding : " + a[i] + " sol is " +  sol);
+                log.info("After adding : {} sol is {}", a[i], sol);
                 if(getSubsetsWithGivenSumUtil(a, sol, i+1, currSum+a[i], sum)) {
                     return true;
                 }
 
                 sol.remove(a[i]);
-                System.out.println("After removing : " + a[i] + " sol is " +  sol);
+                log.info("After removing : {} sol is {}", a[i], sol);
             }
         }
 

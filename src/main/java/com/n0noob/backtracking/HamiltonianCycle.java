@@ -1,7 +1,10 @@
 package com.n0noob.backtracking;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.Arrays;
 
+@Slf4j
 public class HamiltonianCycle {
     public boolean findHamiltonianCycle(int[][] g) {
         int[] path = new int[g.length];
@@ -17,7 +20,7 @@ public class HamiltonianCycle {
             return false;
         }
 
-        System.out.println(Arrays.toString(path));
+        log.info(Arrays.toString(path));
         return true;
     }
 

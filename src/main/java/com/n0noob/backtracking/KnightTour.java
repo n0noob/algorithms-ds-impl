@@ -1,7 +1,9 @@
 package com.n0noob.backtracking;
 
 import com.n0noob.utils.Matrix;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class KnightTour {
 
     //Possible delta moves
@@ -78,7 +80,7 @@ public class KnightTour {
             return true;
         }
 
-        System.out.println("No solution found for this board");
+        log.info("No solution found for this board");
         return false;
     }
 

@@ -1,7 +1,9 @@
 package com.n0noob.backtracking;
 
 import com.n0noob.utils.Matrix;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class NQueen {
 
     private boolean nQueenInRow(int[][] board, int row) {
@@ -63,11 +65,11 @@ public class NQueen {
         }
 
         if(nQueenInRow(board, 0)) {
-            System.out.println("Found combination");
+            log.info("Found combination");
             return true;
         }
 
-        System.out.println("Could not find combination");
+        log.info("Could not find combination");
         return false;
     }
 

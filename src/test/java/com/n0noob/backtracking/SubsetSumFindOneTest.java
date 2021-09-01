@@ -1,5 +1,6 @@
 package com.n0noob.backtracking;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -7,6 +8,7 @@ import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Slf4j
 class SubsetSumFindOneTest {
 
     private static SubsetSumFindOne subsetSumFindOne;
@@ -24,7 +26,7 @@ class SubsetSumFindOneTest {
         assertNotNull(res);
         assertEquals(sum, res.stream().reduce(0, (a, b) -> a+b));
 
-        System.out.println(res);
+        log.info("Result : {}", res);
     }
 
     @Test
@@ -35,7 +37,7 @@ class SubsetSumFindOneTest {
         assertNotNull(res);
         assertEquals(sum, res.stream().reduce(0, (a, b) -> a+b));
 
-        System.out.println(res);
+        log.info("Result : {}", res);
     }
 
 }

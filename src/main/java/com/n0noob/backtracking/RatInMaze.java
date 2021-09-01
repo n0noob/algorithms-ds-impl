@@ -1,7 +1,9 @@
 package com.n0noob.backtracking;
 
 import com.n0noob.utils.Matrix;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class RatInMaze {
 
     private boolean isSafe(final int[][] maze, final int[][] sol, int i, int j) {
@@ -74,7 +76,7 @@ public class RatInMaze {
         sol[0][0] = 1;
 
         if(!solveMazeUtil(maze, sol, 0, 0)) {
-            System.out.println("Couldn't find a solution");
+            log.info("Couldn't find a solution");
             return false;
         }
 
